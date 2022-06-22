@@ -84,6 +84,11 @@ ___________________________________________ */
 	   background: #000;
    }
 
+   .box-model2 {
+
+	background: #000;
+}
+
    /*------- Floats --------*/
 
    .f-left {
@@ -131,7 +136,7 @@ ___________________________________________ */
 	.two-items {
 		display: grid;
 		grid-column: 1 / span 2;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 		justify-content: space-evenly;
 		row-gap: 2em;
 		column-gap: 2em;
@@ -160,7 +165,7 @@ ___________________________________________ */
 		grid-column: 2 / span 1;
 	}
 
-   @media screen and (min-width: 1024px) {
+   @media screen and (min-width: 768px) {
 
 		.site {
 			max-width: none;
@@ -191,6 +196,59 @@ ___________________________________________ */
 		.three-items {
 			display: grid;
 			grid-column: 2 / span 2;
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: space-evenly;
+			row-gap: 2em;
+			column-gap: 2em;
+		}
+
+		.four-items {
+			display: grid;
+			grid-column: 2 / span 2;
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: space-evenly;
+			row-gap: 2em;
+			column-gap: 2em;
+		}
+
+		/*------------  End Grid Items ------------*/
+
+		.nav {
+			grid-column: 2 / span 3;
+		}
+	}
+	
+	@media screen and (min-width: 1024px) {
+
+		.site {
+			max-width: none;
+		}
+
+		/*------------ Grid Items ------------*/
+
+		.head, .main > *, .foot {
+			display: grid;
+			grid-template-columns: 1fr repeat(2, minmax(auto, 30em)) 1fr;
+		}
+
+		.one-item {
+			display: grid;
+			grid-column: 2 / span 2;
+			grid-template-columns: 1fr;
+		}
+
+		.two-items {
+			display: grid;
+			grid-column: 2 / span 2;
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: space-evenly;
+			row-gap: 2em;
+			/* column-gap: 2em; */
+		}
+
+		.three-items {
+			display: grid;
+			grid-column: 2 / span 2;
 			grid-template-columns: repeat(3, 1fr);
 			justify-content: space-evenly;
 			row-gap: 2em;
@@ -212,4 +270,5 @@ ___________________________________________ */
 			grid-column: 2 / span 3;
 		}
 	}
+
    }
